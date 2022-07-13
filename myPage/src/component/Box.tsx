@@ -20,12 +20,3 @@ export default function Box(props: JSX.IntrinsicElements['mesh']) {
         </mesh>
     )
 }
-
-// createRoot(document.getElementById('root') as HTMLElement).render(
-//     <Canvas>
-//         <ambientLight/>
-//         <pointLight position={[10, 10, 10]}/>
-//         <Box position={[-1.2, 0, 0]}/>
-//         <Box position={[1.2, 0, 0]}/>
-//     </Canvas>
-// )
