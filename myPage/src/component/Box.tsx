@@ -1,22 +1,20 @@
-import * as THREE from 'three'
-import React, {useRef, useState} from 'react'
-import {useFrame} from '@react-three/fiber'
+import React from 'react';
+import {useBox} from "@react-three/cannon";
 
-export default function Box(props: JSX.IntrinsicElements['mesh']) {
-    const ref = useRef<THREE.Mesh>(null!)
-    const [hovered, hover] = useState(false)
-    const [clicked, click] = useState(false)
-    useFrame((state, delta) => (ref.current.rotation.x += 0.01))
+
+export default function Box() {
+
+    const [ref, api] = useBox(() => ({mass: 1, position: [0, 2, 0]}));
     return (
         <mesh
-            {...props}
+            onClick={() => {
+                api.velocity.set(0, 2, 0);
+            }}
             ref={ref}
-            scale={clicked ? 1.5 : 1}
-            onClick={(event) => click(!clicked)}
-            onPointerOver={(event) => hover(true)}
-            onPointerOut={(event) => hover(false)}>
-            <boxGeometry args={[1, 1, 1]}/>
-            <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'}/>
+            position={[0, 2, 0]}
+        >
+            <boxBufferGeometry attach="geometry"/>
+            <meshLambertMaterial attach="material" color="hotpink"/>
         </mesh>
-    )
+    );
 }
