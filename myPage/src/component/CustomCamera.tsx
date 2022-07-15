@@ -1,10 +1,13 @@
 import {OrbitControls} from "@react-three/drei";
 
-export default function CustomCamera() {
+const CustomCamera = (props: { camera: any; }) => {
 
-    // const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 100, 1000);
+    const {camera} = props;
 
     return (
-        <OrbitControls/>
+        <OrbitControls camera={camera}/>
     );
 }
+
+export default CustomCamera;
+
