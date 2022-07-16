@@ -4,9 +4,7 @@ const CustomCamera = (props: { camera: any; }) => {
 
     const {camera} = props;
 
-    return (
-        <OrbitControls camera={camera}/>
-    );
+    return <OrbitControls camera={camera}/>;
 }
 
 export default CustomCamera;

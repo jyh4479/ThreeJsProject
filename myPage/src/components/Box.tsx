@@ -2,7 +2,7 @@ import React from 'react';
 import {useBox} from "@react-three/cannon";
 
 
-export default function Box() {
+const Box = () => {
 
     const [ref, api] = useBox(() => ({mass: 1, position: [0, 2, 0]}));
     return (
@@ -10,11 +10,14 @@ export default function Box() {
             onClick={() => {
                 api.velocity.set(0, 2, 0);
             }}
+            //@ts-ignore
             ref={ref}
             position={[0, 2, 0]}
         >
-            <boxBufferGeometry attach="geometry"/>
-            <meshLambertMaterial attach="material" color="hotpink"/>
+            <boxBufferGeometry attach={"geometry"}/>
+            <meshLambertMaterial attach={"material"} color="hotpink"/>
         </mesh>
     );
 }
+
+export default Box;
