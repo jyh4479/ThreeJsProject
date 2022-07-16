@@ -3,12 +3,13 @@ import {TextGeometry} from "three/examples/jsm/geometries/TextGeometry";
 import React, {useEffect, useState} from "react";
 import {useBox} from "@react-three/cannon";
 
-const Text = () => {
+const Text = (props: { glow: any; }) => {
 
+    const {glow} = props;
     const [testText, setTextText] = useState(null);
     //@ts-ignore
     const [textGeometry, setTextGeometry] = useState(new TextGeometry("", {}));
-    const [ref] = useBox(() => ({mass: 1, position: [0, 30, -30]}));
+    const [ref] = useBox(() => ({mass: 10, position: [0, 10, -30]}));
 
     useEffect(() => {
         const text = "Hello!";
@@ -18,11 +19,11 @@ const Text = () => {
         loader.load("./src/fonts/Roboto_Medium_Italic.json", font => {
             const tGeometry = new TextGeometry(text, {
                 font: font,
-                size: 10,
+                size: 40,
                 height: 5,
                 curveSegments: 12,
                 bevelEnabled: true,
-                bevelThickness: 2,
+                bevelThickness: 5,
                 bevelSize: 2,
                 bevelOffset: 2,
                 bevelSegments: 15
@@ -39,8 +40,8 @@ const Text = () => {
 
     return (
         //@ts-ignore
-        <mesh geometry={textGeometry} ref={ref}>
-            <meshPhongMaterial emissive={"0xf9d71c"} emissiveIntensity={0.5}/>
+        <mesh geometry={textGeometry} position={[-75, 3, 0]} castShadow={true} receiveShadow={true} ref={ref}>
+            <meshPhongMaterial emissive={"0xf9d71c"} emissiveIntensity={glow}/>
             <meshPhongMaterial color={"yellow"}/>
         </mesh>
     )

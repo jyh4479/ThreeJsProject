@@ -7,9 +7,9 @@ const Ground = (props: JSX.IntrinsicElements['mesh']) => {
     }));
     return (
         //@ts-ignore
-        <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]}>
-            <planeBufferGeometry attach={"geometry"} args={[100, 100]}/>
-            <meshLambertMaterial attach={"material"} color={"lightblue"} transparent={true} opacity={0.5}/>
+        <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} receiveShadow={true}>
+            <planeBufferGeometry attach={"geometry"} args={[300, 150]}/>
+            <meshLambertMaterial attach={"material"} color={"0x4e8f38"} transparent={true} opacity={0.5}/>
         </mesh>
     );
 }
