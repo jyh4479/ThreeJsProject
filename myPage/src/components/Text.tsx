@@ -9,17 +9,17 @@ const Text = (props: { glow: any; }) => {
     const [testText, setTextText] = useState(null);
     //@ts-ignore
     const [textGeometry, setTextGeometry] = useState(new TextGeometry("", {}));
-    const [ref] = useBox(() => ({mass: 10, position: [0, 10, -30]}));
+    const [ref] = useBox(() => ({mass: 10, position: [-100, 10, -30]}));
 
     useEffect(() => {
-        const text = "Hello!";
+        const text = "Front end developer!";
         let textMesh;
 
         const loader = new FontLoader();
         loader.load("./src/fonts/Roboto_Medium_Italic.json", font => {
             const tGeometry = new TextGeometry(text, {
                 font: font,
-                size: 40,
+                size: 20,
                 height: 5,
                 curveSegments: 12,
                 bevelEnabled: true,

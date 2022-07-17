@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useRef} from 'react';
+import {useHelper} from "@react-three/drei";
+import {RectAreaLightHelper} from "three/examples/jsm/helpers/RectAreaLightHelper";
 
-const RectLight = (props: { glow: any; }) => {
+const RectAreaLight = (props: { glow: any; }) => {
 
     const {glow} = props;
 
-    return (
+    const rectAreaLight = useRef();
+    useHelper(rectAreaLight, RectAreaLightHelper, "black");
 
+    return (
         <rectAreaLight
             color={"0xf9d71c"}
             intensity={1}
@@ -18,13 +22,13 @@ const RectLight = (props: { glow: any; }) => {
             lookAt={[0, 0, 0]}
             penumbra={1}
             castShadow
+            ref={rectAreaLight}
 
             // onUpdate={self => {
             //     self.lookAt(0, 0, 120)
             // }}
         />
-
     )
 };
 
-export default RectLight;
+export default RectAreaLight;

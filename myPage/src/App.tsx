@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Box, CustomCanvas, Ground, Text} from "./components";
-import {PointLight} from "./components/lights";
+import {PointLight, SpotLight, RectAreaLight} from "./components/lights";
 import {OrbitControls, Stars} from "@react-three/drei";
 import {Physics} from "@react-three/cannon";
 
@@ -25,10 +25,10 @@ const App = () => {
             {/*<Sky distance={450000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25}/>*/}
 
             {/*<ambientLight intensity={0.2}/>*/}
-            {/*<spotLight position={[10, 5, 10]} angle={0.3}/>*/}
-            {/*<spotLight position={[0, 0, 0]} angle={0.3}/>*/}
 
-            {/*<RectLight glow={glow}/>*/}
+
+            <RectAreaLight/>
+            <SpotLight/>
             <PointLight/>
 
             <Physics>
