@@ -9,23 +9,23 @@ const Text = (props: { glow: any; }) => {
     const [testText, setTextText] = useState(null);
     //@ts-ignore
     const [textGeometry, setTextGeometry] = useState(new TextGeometry("", {}));
-    const [ref] = useBox(() => ({mass: 10, position: [-100, 10, -30]}));
+    const [ref] = useBox(() => ({mass: 100, position: [-20, 0.5, 0], rotation: [0, -0.5, 0]}));
 
     useEffect(() => {
-        const text = "Front end developer!";
+        const text = "Developer  yong  hoon !";
         let textMesh;
 
         const loader = new FontLoader();
         loader.load("./src/fonts/Roboto_Medium_Italic.json", font => {
             const tGeometry = new TextGeometry(text, {
                 font: font,
-                size: 20,
-                height: 5,
-                curveSegments: 12,
+                size: 10,
+                height: 2,
+                curveSegments: 1,
                 bevelEnabled: true,
-                bevelThickness: 5,
-                bevelSize: 2,
-                bevelOffset: 2,
+                bevelThickness: 1,
+                bevelSize: 1,
+                bevelOffset: 1,
                 bevelSegments: 15
             });
 
@@ -40,7 +40,7 @@ const Text = (props: { glow: any; }) => {
 
     return (
         //@ts-ignore
-        <mesh geometry={textGeometry} position={[-75, 3, 0]} castShadow={true} receiveShadow={true} ref={ref}>
+        <mesh geometry={textGeometry} castShadow={true} receiveShadow={true} ref={ref}>
             <meshPhongMaterial emissive={"0xf9d71c"} emissiveIntensity={glow}/>
             <meshPhongMaterial color={"yellow"}/>
         </mesh>

@@ -12,7 +12,7 @@ const CustomCanvas = (props: { children: any; }) => {
                 aspect: window.innerWidth / window.innerHeight,
                 near: 1,
                 far: 1500,
-                position: [-30, 50, 100],
+                position: [-30,50, 120],
             }}
             onCreated={({camera, gl}) => {
 

@@ -16,7 +16,7 @@ const PointLight = () => {
             color={"white"}
             intensity={1}
             distance={500}
-            position={[0, 50, 0]}
+            position={[0, 30, 0]}
             castShadow={true}
             ref={pointLight}
         />

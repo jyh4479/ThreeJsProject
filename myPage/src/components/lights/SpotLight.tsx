@@ -9,9 +9,10 @@ const SpotLight = () => {
 
     return (
         <spotLight
-            intensity={0.5}
-            position={[-110, -20, 150]}
-            angle={0.5}
+            intensity={1}
+            position={[-40, 75, 0]}
+            angle={1}
+            // @ts-ignore
             ref={spotLight}
         />
     )
