@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Box, CustomCanvas, Ground, StreetLamp, Text} from "./components";
-import {PointLight, RectAreaLight} from "./components/lights";
+import {PointLight} from "./components/lights";
 import {OrbitControls, Stars} from "@react-three/drei";
 import {Physics} from "@react-three/cannon";
 
@@ -33,16 +33,19 @@ const App = () => {
 
 
             {/*<RectAreaLight position={[20, 10, 40]} rotation={[0, -0.5, 0]}/>*/}
-            {/*<PointLight position={[-40, 70, 0]}/>*/}
+            <PointLight position={[-40, 70, 0]}/>
 
-            <RectAreaLight position={[5, 23, 5]}/>
-            <PointLight position={[0, 50, -50]}/>
+            {/*<RectAreaLight position={[5, 23, -5]}/>*/}
+            {/*<PointLight position={[0, 50, -50]}/>*/}
 
             <Physics>
                 {boxArray.map(key => <Box key={key}/>)}
-                {/*<Text glow={glow} position={[-20, 0.5, 0]} rotation={[0, -0.5, 0]}/>*/}
-                <Text glow={0.5} position={[-75, 3, 0]} rotation={[0, 0, 0]}/>
-                <Text glow={0.5} position={[-75, 3, -30]} rotation={[0, 0, 0]}/>
+                <Text
+                    glow={glow}
+                    position={[-20, 3, 0]}
+                    rotation={[0, -0.5, 0]}
+                    text={"Jeong Yong Hoon"}
+                />
                 <StreetLamp/>
                 <Ground/>
             </Physics>

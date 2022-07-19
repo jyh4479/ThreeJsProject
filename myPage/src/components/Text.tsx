@@ -3,16 +3,15 @@ import {TextGeometry} from "three/examples/jsm/geometries/TextGeometry";
 import React, {useEffect, useState} from "react";
 import {useBox} from "@react-three/cannon";
 
-const Text = (props: { glow: any; position: any; rotation: any }) => {
+const Text = (props: { glow: any; position: any; rotation: any, text: string }) => {
 
-    const {glow, position = [0, 0, 0], rotation = [0, 0, 0]} = props;
+    const {glow, position = [0, 0, 0], rotation = [0, 0, 0], text = "Hello"} = props;
     const [testText, setTextText] = useState(null);
     //@ts-ignore
     const [textGeometry, setTextGeometry] = useState(new TextGeometry("", {}));
     const [ref] = useBox(() => ({mass: 100, position: position, rotation: rotation}));
 
     useEffect(() => {
-        const text = "Developer  yong  hoon !";
         let textMesh;
 
         const loader = new FontLoader();

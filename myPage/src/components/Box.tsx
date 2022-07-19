@@ -5,6 +5,7 @@ import {useBox} from "@react-three/cannon";
 const Box = () => {
 
     const [ref, api] = useBox(() => ({mass: 1, position: [0, 100, 0]}));
+
     return (
         <mesh
             onClick={() => {

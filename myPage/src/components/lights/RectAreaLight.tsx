@@ -7,19 +7,21 @@ const RectAreaLight = (props: { position: any; rotation: any }) => {
     const {position = [0, 0, 0], rotation = [0, 0, 0]} = props;
 
     const rectAreaLight = useRef();
-    useHelper(rectAreaLight, RectAreaLightHelper, "#fff");
+    useHelper(rectAreaLight, RectAreaLightHelper, "0xf9d71c");
 
     return (
         <rectAreaLight
-            color={"#fff"}
-            intensity={0.5}
+            color={"0xf9d71c"}
+            intensity={0}
             width={150}
             height={30}
             position={position}
             rotation={rotation}
-            // @ts-ignore
-            // lookAt={[0, 0, 0]}
-            lookAt={[0, 0, 120]}
+
+            onUpdate={self => {
+                self.lookAt(0, 0, 120)
+            }}
+
             penumbra={1}
             castShadow
             ref={rectAreaLight}
