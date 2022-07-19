@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Box, CustomCanvas, Ground, StreetLamp, Text} from "./components";
-import {PointLight, SpotLight} from "./components/lights";
+import {PointLight, RectAreaLight} from "./components/lights";
 import {OrbitControls, Stars} from "@react-three/drei";
 import {Physics} from "@react-three/cannon";
 
@@ -19,6 +19,7 @@ const App = () => {
 
     // Animate();
 
+    // @ts-ignore
     return (
         <CustomCanvas>
             <OrbitControls/>
@@ -28,13 +29,20 @@ const App = () => {
             {/*<Sky distance={450000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25}/>*/}
 
             {/*<ambientLight intensity={0.2}/>*/}
-            {/*<RectAreaLight/>*/}
-            <SpotLight/>
-            <PointLight/>
+            {/*<SpotLight/>*/}
+
+
+            {/*<RectAreaLight position={[20, 10, 40]} rotation={[0, -0.5, 0]}/>*/}
+            {/*<PointLight position={[-40, 70, 0]}/>*/}
+
+            <RectAreaLight position={[5, 23, 5]}/>
+            <PointLight position={[0, 50, -50]}/>
 
             <Physics>
                 {boxArray.map(key => <Box key={key}/>)}
-                <Text glow={glow}/>
+                {/*<Text glow={glow} position={[-20, 0.5, 0]} rotation={[0, -0.5, 0]}/>*/}
+                <Text glow={0.5} position={[-75, 3, 0]} rotation={[0, 0, 0]}/>
+                <Text glow={0.5} position={[-75, 3, -30]} rotation={[0, 0, 0]}/>
                 <StreetLamp/>
                 <Ground/>
             </Physics>

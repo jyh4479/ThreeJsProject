@@ -2,28 +2,27 @@ import React, {useRef} from 'react';
 import {useHelper} from "@react-three/drei";
 import {RectAreaLightHelper} from "three/examples/jsm/helpers/RectAreaLightHelper";
 
-const RectAreaLight = (props: { glow: any; }) => {
+const RectAreaLight = (props: { position: any; rotation: any }) => {
 
-    const {glow} = props;
+    const {position = [0, 0, 0], rotation = [0, 0, 0]} = props;
 
     const rectAreaLight = useRef();
-    useHelper(rectAreaLight, RectAreaLightHelper, "black");
+    useHelper(rectAreaLight, RectAreaLightHelper, "#fff");
 
     return (
         <rectAreaLight
-            color={"0xf9d71c"}
-            intensity={1}
+            color={"#fff"}
+            intensity={0.5}
             width={150}
             height={30}
-            // position={[5, 23, 5]}
-            // position={[0, 0, 0]}
-            position={[0, 50, 0]}
+            position={position}
+            rotation={rotation}
             // @ts-ignore
-            lookAt={[0, 0, 0]}
+            // lookAt={[0, 0, 0]}
+            lookAt={[0, 0, 120]}
             penumbra={1}
             castShadow
             ref={rectAreaLight}
-
             // onUpdate={self => {
             //     self.lookAt(0, 0, 120)
             // }}
