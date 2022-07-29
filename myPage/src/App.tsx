@@ -3,6 +3,7 @@ import {Box, CustomCanvas, Ground, StreetLamp, Text} from "./components";
 import {PointLight} from "./components/lights";
 import {OrbitControls, Stars} from "@react-three/drei";
 import {Physics} from "@react-three/cannon";
+import NoticeBoard from "./components/NoticeBoard";
 
 
 //https://sketchfab.com/
@@ -46,6 +47,7 @@ const App = () => {
                     rotation={[0, -0.5, 0]}
                     text={"Jeong Yong Hoon"}
                 />
+                <NoticeBoard/>
                 <StreetLamp/>
                 <Ground/>
             </Physics>
