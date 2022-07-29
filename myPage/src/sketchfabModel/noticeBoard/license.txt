@@ -1,11 +1,11 @@
 Model Information:
-* title:	Overgrown Train Station - Notice Board
-* source:	https://sketchfab.com/3d-models/overgrown-train-station-notice-board-8358a8466cbe404d905eecc2a4c4f09a
-* author:	Mysticbobo (https://sketchfab.com/Mysticbobo)
+* title:	Notice board foam
+* source:	https://sketchfab.com/3d-models/notice-board-foam-7a4f32929cc54ca6b40415bc2817a33d
+* author:	matousekfoto (https://sketchfab.com/matousekfoto)
 
 Model License:
-* license type:	CC-BY-ND-4.0 (http://creativecommons.org/licenses/by-nd/4.0/)
-* requirements:	Author must be credited. Modified versions can not be distributed. Commercial use is allowed.
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Overgrown Train Station - Notice Board" (https://sketchfab.com/3d-models/overgrown-train-station-notice-board-8358a8466cbe404d905eecc2a4c4f09a) by Mysticbobo (https://sketchfab.com/Mysticbobo) licensed under CC-BY-ND-4.0 (http://creativecommons.org/licenses/by-nd/4.0/)
+This work is based on "Notice board foam" (https://sketchfab.com/3d-models/notice-board-foam-7a4f32929cc54ca6b40415bc2817a33d) by matousekfoto (https://sketchfab.com/matousekfoto) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

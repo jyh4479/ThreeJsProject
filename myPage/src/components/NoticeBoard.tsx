@@ -8,7 +8,7 @@ const NoticeBoard = () => {
 
     return (
         <Suspense fallback={null}>
-            <primitive position={[0, 0, 0]} scale={[20, 20, 20]} object={noticeBoard.scene}/>
+            <primitive position={[0, 0, 0]} scale={[50, 50, 50]} object={noticeBoard.scene}/>
         </Suspense>
     )
 };
