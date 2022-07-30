@@ -10,7 +10,7 @@ import NoticeBoard from "./components/NoticeBoard";
 //3D Model 관련 참고 사이트
 const App = () => {
 
-    const boxArray = Array.from(Array(100).keys());
+    const boxArray = Array.from(Array(300).keys());
     const [glow, setGlow] = useState(50);
 
     const Animate = () => {
@@ -39,16 +39,31 @@ const App = () => {
             {/*<RectAreaLight position={[5, 23, -5]}/>*/}
             {/*<PointLight position={[0, 50, -50]}/>*/}
 
+
             <Physics>
-                {boxArray.map(key => <Box key={key}/>)}
+                {boxArray.map(index => <Box index={index}/>)}
+
                 <Text
                     glow={glow}
-                    position={[-20, 3, 0]}
-                    rotation={[0, -0.5, 0]}
-                    text={"Jeong Yong Hoon"}
+                    position={[-20, 30, 11]}
+                    rotation={[0, -0.645, 0]}
+                    text={"Front-end Developer"}
                 />
-                <NoticeBoard/>
-                <StreetLamp/>
+
+                <Text
+                    glow={glow}
+                    position={[-8, 20, 20]}
+                    rotation={[0, -0.645, 0]}
+                    text={"Jeong Yong Hoon!"}
+                />
+
+                <NoticeBoard
+                    position={[-50, 0, 60]}
+                    rotation={[0, 2.5, 0, "XYZ"]}/>
+
+                <StreetLamp
+                    position={[-70, 0, 0]}
+                    rotation={[0, 0, 0, "XYZ"]}/>
                 <Ground/>
             </Physics>
 

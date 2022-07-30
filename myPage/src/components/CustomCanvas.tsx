@@ -8,16 +8,16 @@ const CustomCanvas = (props: { children: any; }) => {
     return (
         <Canvas
             camera={{
-                fov: 75,
+                fov: 60,
                 aspect: window.innerWidth / window.innerHeight,
-                near: 1,
+                near: 10,
                 far: 1500,
-                position: [-30,50, 120],
+                position: [-100, 50, 120],
             }}
             onCreated={({camera, gl}) => {
 
                 //Camera Setting
-                camera.lookAt(0, 0, 0);
+                camera.lookAt(-30, 0, 150);
                 // camera.position.set(-30, 50, 100);
 
                 //Web Gl

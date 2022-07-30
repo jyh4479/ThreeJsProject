@@ -1,14 +1,17 @@
 import React, {Suspense} from 'react';
-import {useLoader} from '@react-three/fiber'
+import {useLoader, Vector3} from '@react-three/fiber'
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
+import {Euler} from "@react-three/fiber/dist/declarations/src/three-types";
 
-const StreetLamp = () => {
+const StreetLamp = (props: { position: Vector3, rotation: Euler }) => {
+
+    const {position, rotation} = props;
 
     const streetLamp = useLoader(GLTFLoader, "./src/sketchfabModel/streetLampChair/scene.gltf");
 
     return (
         <Suspense fallback={null}>
-            <primitive position={[-70, 0, 0]} scale={[20, 20, 20]} object={streetLamp.scene}/>
+            <primitive position={position} rotation={rotation} scale={[20, 20, 20]} object={streetLamp.scene}/>
         </Suspense>
     )
 };

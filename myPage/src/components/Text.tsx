@@ -9,7 +9,7 @@ const Text = (props: { glow: any; position: any; rotation: any, text: string }) 
     const [testText, setTextText] = useState(null);
     //@ts-ignore
     const [textGeometry, setTextGeometry] = useState(new TextGeometry("", {}));
-    const [ref] = useBox(() => ({mass: 100, position: position, rotation: rotation}));
+    const [ref] = useBox(() => ({mass: 0, position: position, rotation: rotation}));
 
     useEffect(() => {
         let textMesh;
@@ -18,14 +18,14 @@ const Text = (props: { glow: any; position: any; rotation: any, text: string }) 
         loader.load("./src/fonts/Roboto_Medium_Italic.json", font => {
             const tGeometry = new TextGeometry(text, {
                 font: font,
-                size: 10,
-                height: 2,
-                curveSegments: 1,
-                bevelEnabled: true,
-                bevelThickness: 1,
-                bevelSize: 1,
-                bevelOffset: 1,
-                bevelSegments: 15
+                size: 5,
+                height: 1,
+                // curveSegments: 1,
+                // bevelEnabled: true,
+                // bevelThickness: 1,
+                // bevelSize: 1,
+                // bevelOffset: 1,
+                // bevelSegments: 1
             });
 
             setTextGeometry(tGeometry);

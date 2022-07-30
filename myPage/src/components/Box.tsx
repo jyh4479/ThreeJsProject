@@ -2,14 +2,23 @@ import React from 'react';
 import {useBox} from "@react-three/cannon";
 
 
-const Box = () => {
+const Box = (props: { index: number }) => {
 
-    const [ref, api] = useBox(() => ({mass: 1, position: [0, 100, 0]}));
+    const {index} = props;
+    const boxPosition = [
+        {x: 0, z: 0}, {x: 1, z: -1}, {x: 2, z: -2}, {x: 1, z: -3},
+        {x: 0, z: -4}, {x: -1, z: -3}, {x: -2, z: -2}, {x: -1, z: -1}
+    ]
+
+    const [ref, api] = useBox(() => ({
+        mass: 1,
+        position: [boxPosition[index % boxPosition.length].x, 100, boxPosition[index % boxPosition.length].z]
+    }));
 
     return (
         <mesh
             onClick={() => {
-                api.velocity.set(0, 2, 0);
+                api.velocity.set(0, 10, 0);
             }}
             //@ts-ignore
             ref={ref}

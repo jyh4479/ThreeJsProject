@@ -1,14 +1,24 @@
 import React, {Suspense} from 'react';
-import {useLoader} from '@react-three/fiber'
+import {useLoader, Vector3} from '@react-three/fiber'
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
+import {Euler} from "@react-three/fiber/dist/declarations/src/three-types";
 
-const NoticeBoard = () => {
+const NoticeBoard = (props: { position: Vector3, rotation: Euler }) => {
+
+    const {position, rotation} = props;
 
     const noticeBoard = useLoader(GLTFLoader, "./src/sketchfabModel/noticeBoard/scene.gltf");
 
+    // const rotateModel = (model: any) => {
+    //     model.rotation.x += 5;
+    //     model.rotation.y += 5;
+    //
+    //     return model.scene
+    // }
+
     return (
         <Suspense fallback={null}>
-            <primitive position={[0, 0, 0]} scale={[50, 50, 50]} object={noticeBoard.scene}/>
+            <primitive position={position} rotation={rotation} scale={[50, 50, 50]} object={noticeBoard.scene}/>
         </Suspense>
     )
 };
