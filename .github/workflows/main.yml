@@ -16,10 +16,10 @@ jobs:
         uses: actions/setup-node@v2
 
       - name: Install dependencies
-        run: yarn install
+        run: ./myPage yarn install
 
       - name: Build static file
-        run: yarn run build
+        run: ./myPage yarn run build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -29,6 +29,6 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Deploy static site to s3 bucket
-        run: aws s3 sync ./dist s3://yonghoon-jeong-threejs
+        run: aws s3 sync ./myPage/dist s3://yonghoon-jeong-threejs
 
         #(https://youtu.be/lZ2SwKxcc88)
