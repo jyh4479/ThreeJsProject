@@ -24,6 +24,7 @@ const RectAreaLight = (props: { position: any; rotation: any }) => {
 
             penumbra={1}
             castShadow
+            // @ts-ignore
             ref={rectAreaLight}
             // onUpdate={self => {
             //     self.lookAt(0, 0, 120)

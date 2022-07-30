@@ -18,7 +18,7 @@ const NoticeBoard = (props: { position: Vector3, rotation: Euler }) => {
 
     return (
         <Suspense fallback={null}>
-            <primitive position={position} rotation={rotation} scale={[50, 50, 50]} object={noticeBoard.scene}/>
+            <primitive position={position} rotation={rotation} scale={[65, 50, 50]} object={noticeBoard.scene}/>
         </Suspense>
     )
 };

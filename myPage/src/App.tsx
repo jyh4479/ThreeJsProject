@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {Box, CustomCanvas, Ground, StreetLamp, Text} from "./components";
 import {PointLight} from "./components/lights";
 import {OrbitControls, Stars} from "@react-three/drei";
@@ -11,16 +11,11 @@ import NoticeBoard from "./components/NoticeBoard";
 const App = () => {
 
     const boxArray = Array.from(Array(300).keys());
-    const [glow, setGlow] = useState(50);
+    const [boxList, setBoxList] = useState([]);
 
-    const Animate = () => {
-        // requestAnimationFrame(Animate);
-        setGlow(Math.random() - 0.6);
-    }
+    const physicalField = useRef(null);
 
-    // Animate();
 
-    // @ts-ignore
     return (
         <CustomCanvas>
             <OrbitControls/>
@@ -40,25 +35,34 @@ const App = () => {
             {/*<PointLight position={[0, 50, -50]}/>*/}
 
 
-            <Physics>
+            {/*@ts-ignore*/}
+            <Physics ref={physicalField}>
+
                 {boxArray.map(index => <Box index={index}/>)}
 
                 <Text
-                    glow={glow}
-                    position={[-20, 30, 11]}
+                    glow={0.5}
+                    position={[-25, 35, 6]}
                     rotation={[0, -0.645, 0]}
-                    text={"Front-end Developer"}
+                    text={"Hi! Welcome my page"}
                 />
 
                 <Text
-                    glow={glow}
-                    position={[-8, 20, 20]}
+                    glow={0.5}
+                    position={[-15, 25, 13.5]}
+                    rotation={[0, -0.645, 0]}
+                    text={"I'm Front-end Developer"}
+                />
+
+                <Text
+                    glow={0.5}
+                    position={[-8, 15, 19]}
                     rotation={[0, -0.645, 0]}
                     text={"Jeong Yong Hoon!"}
                 />
 
                 <NoticeBoard
-                    position={[-50, 0, 60]}
+                    position={[-55, 0, 55]}
                     rotation={[0, 2.5, 0, "XYZ"]}/>
 
                 <StreetLamp

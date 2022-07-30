@@ -19,6 +19,7 @@ const PointLight = (props: { position: any; }) => {
             distance={350}
             position={position}
             castShadow={true}
+            // @ts-ignore
             ref={pointLight}
         />
     )
