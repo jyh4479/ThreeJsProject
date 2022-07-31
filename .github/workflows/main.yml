@@ -15,13 +15,12 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v2
 
-      - name: Move Directory
-        run: cd myPage
-
       - name: Install dependencies
+        working-directory: ./myPage
         run: yarn install
 
       - name: Build static file
+        working-directory: ./myPage
         run: yarn run build
 
       - name: Configure AWS Credentials
@@ -32,6 +31,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Deploy static site to s3 bucket
+        working-directory: ./myPage
         run: aws s3 sync ./dist s3://yonghoon-jeong-threejs
 
         #(https://youtu.be/lZ2SwKxcc88)
