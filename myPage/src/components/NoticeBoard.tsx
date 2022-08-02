@@ -7,7 +7,7 @@ const NoticeBoard = (props: { position: Vector3, rotation: Euler }) => {
 
     const {position, rotation} = props;
 
-    const noticeBoard = useLoader(GLTFLoader, "./sketchfabModel/noticeBoard/scene.gltf");
+    const noticeBoard = useLoader(GLTFLoader, "/sketchfabModel/noticeBoard/scene.gltf");
 
     // const rotateModel = (model: any) => {
     //     model.rotation.x += 5;

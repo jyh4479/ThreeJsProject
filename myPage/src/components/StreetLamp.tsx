@@ -7,7 +7,7 @@ const StreetLamp = (props: { position: Vector3, rotation: Euler }) => {
 
     const {position, rotation} = props;
 
-    const streetLamp = useLoader(GLTFLoader, "./sketchfabModel/streetLampChair/scene.gltf");
+    const streetLamp = useLoader(GLTFLoader, "/sketchfabModel/streetLampChair/scene.gltf");
 
     return (
         <Suspense fallback={null}>

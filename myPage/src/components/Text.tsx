@@ -15,7 +15,7 @@ const Text = (props: { glow: any; position: any; rotation: any, text: string }) 
         let textMesh;
 
         const loader = new FontLoader();
-        loader.load("./src/fonts/Roboto_Medium_Italic.json", font => {
+        loader.load("/fonts/Roboto_Medium_Italic.json", font => {
             const tGeometry = new TextGeometry(text, {
                 font: font,
                 size: 5,
